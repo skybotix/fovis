@@ -29,7 +29,7 @@ generate_messages(DEPENDENCIES std_msgs)
 
 catkin_package()
 
-add_definitions("-msse3")
+add_definitions("-O3 -march=native")
 
 include_directories(src ${libfovis_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
 
