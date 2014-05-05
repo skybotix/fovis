@@ -9,7 +9,7 @@
         <param name="disparity_range" value="64" />
     </node>
 
-     <node  name="disp_view3" pkg="image_view" type="image_view" clear_params="true" output="screen">
+     <node  name="feature_view" pkg="image_view" type="image_view" clear_params="true" output="screen">
        <remap from="image" to="/stereo_odometer/features" />
    </node> 
 
@@ -19,10 +19,7 @@
     <remap from="/stereo/left/camera_info" to="/cam0/camera_info" />
     <remap from="/stereo/right/camera_info" to="/cam1/camera_info" />
     <param name="approximate_sync" type="bool" value="True" />
-    <param name="queue_size" type="int" value="40000" />
-  </node>
-
-  <node pkg="rosbag" type="play" name="rosbagPlay" output="screen" args="/home/omaris/mfehr_tranlsation.bag -l -q -r 1 -s 1">  
+    <param name="queue_size" type="int" value="400" />
   </node>
 
 </launch>
